@@ -64,6 +64,12 @@ v0.1.4
 - Add ``item.ssl_crt``, ``item.ssl_key``, and ``item.ssl_dhparam`` to override
   pki nginx configuration per site. [patrickheeney]
 
+- Fix https site detection when using debops.nginx as a dependency.
+  [patrickheeney]
+
+- Remove ``item.pki`` in favor of ``item.ssl`` in the nginx site configuration.
+  [patrickheeney]
+
 v0.1.3
 ------
 
