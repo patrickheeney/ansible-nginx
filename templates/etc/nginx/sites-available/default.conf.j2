@@ -115,9 +115,8 @@
 #
 #
 #   - item.ssl: True/False
-#       Optional. Enable or disable HTTPS for this server configuration (HTTPS
-#       is enabled by default for all servers, you can disable it selectively
-#       using this option).
+#       Optional. Enable or disable HTTPS for this server configuration If not
+#       supplied pki will be used instead.
 #
 #
 #   - item.ssl_crt: ''
@@ -149,6 +148,12 @@
 #       Optional. Overwrite default PKI realm used by nginx for this server
 #       configuration. See 'debops.pki' role for more information, as well as
 #       '/etc/pki/' directory for list of available realms.
+#
+#
+#   - item.pki: True/False
+#       Optional. Enable or disable HTTPS for this server configuration (HTTPS
+#       is enabled by default for all servers when using debops.pki. You can
+#       disable it selectively using this option).
 #
 #
 #   - item.pki_crt: ''

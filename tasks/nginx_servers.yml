@@ -68,8 +68,7 @@
     nginx_register_default_server_https: '{{ item.name[0] | default("default") }}'
   with_items: nginx_servers[::-1]
   when: ((item.enabled is defined and item.enabled) and
-         (item.ssl is undefined or item.ssl is defined and item.ssl) and
-         (item.listen_ssl is undefined or (item.listen_ssl is defined and item.listen_ssl)))
+         ((item.ssl is defined and item.ssl) or (item.pki is defined and item.pki) or nginx_pki))
 
 - name: Spin the HTTP default_server roulette!
   set_fact:
